@@ -24,6 +24,7 @@ import { AuthGuard } from './auth.guard';
             fromAuth.authFeatureKey, 
             fromAuth.authReducer
         ),
+        EffectsModule.forFeature([])
 
     ],
     declarations: [LoginComponent],

@@ -55,10 +55,10 @@ const routes: Routes = [
         MatToolbarModule,
         AuthModule.forRoot(),
         StoreModule.forRoot({}, {}),
-        EntityDataModule.forRoot(entityConfig),
-        EffectsModule.forRoot([]),
+        StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
         StoreRouterConnectingModule.forRoot(),
-        StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
+        EffectsModule.forRoot([]),
+        EntityDataModule.forRoot(entityConfig),
     ], 
     providers: [provideHttpClient(withInterceptorsFromDi())
     ] 
